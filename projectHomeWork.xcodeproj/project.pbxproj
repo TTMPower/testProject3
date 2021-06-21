@@ -14,6 +14,7 @@
 		3A4B5D9B26805708005C730A /* projectHomeWork.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A4B5D9926805708005C730A /* projectHomeWork.xcdatamodeld */; };
 		3A4B5D9D2680570C005C730A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A4B5D9C2680570C005C730A /* Assets.xcassets */; };
 		3A4B5DA02680570C005C730A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4B5D9E2680570C005C730A /* LaunchScreen.storyboard */; };
+		3A4B5DA826806237005C730A /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4B5DA726806237005C730A /* Persistance.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		3A4B5D9C2680570C005C730A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A4B5D9F2680570C005C730A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A4B5DA12680570C005C730A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A4B5DA726806237005C730A /* Persistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistance.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				3A4B5D9026805708005C730A /* AppDelegate.swift */,
 				3A4B5D9226805708005C730A /* SceneDelegate.swift */,
 				3A4B5D9426805708005C730A /* ViewController.swift */,
+				3A4B5DA726806237005C730A /* Persistance.swift */,
 				3A4B5D9626805708005C730A /* Main.storyboard */,
 				3A4B5D9C2680570C005C730A /* Assets.xcassets */,
 				3A4B5D9E2680570C005C730A /* LaunchScreen.storyboard */,
@@ -143,6 +146,7 @@
 				3A4B5D9526805708005C730A /* ViewController.swift in Sources */,
 				3A4B5D9126805708005C730A /* AppDelegate.swift in Sources */,
 				3A4B5D9326805708005C730A /* SceneDelegate.swift in Sources */,
+				3A4B5DA826806237005C730A /* Persistance.swift in Sources */,
 				3A4B5D9B26805708005C730A /* projectHomeWork.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
