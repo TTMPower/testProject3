@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A21AC162681D9A000FB114E /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A21AC152681D9A000FB114E /* CoreData.swift */; };
 		3A4B5D9126805708005C730A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4B5D9026805708005C730A /* AppDelegate.swift */; };
 		3A4B5D9326805708005C730A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4B5D9226805708005C730A /* SceneDelegate.swift */; };
 		3A4B5D9526805708005C730A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4B5D9426805708005C730A /* ViewController.swift */; };
@@ -17,10 +18,12 @@
 		3A4B5DA826806237005C730A /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4B5DA726806237005C730A /* Persistance.swift */; };
 		3A4B5DAA268077AD005C730A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4B5DA9268077AD005C730A /* SecondViewController.swift */; };
 		3A4E8DE426808311002D81BD /* PersistanceForToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E8DE326808311002D81BD /* PersistanceForToDo.swift */; };
+		3A4E8DE82681A744002D81BD /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E8DE72681A744002D81BD /* ThirdViewController.swift */; };
 		8A2EC938BCD897E71B7CB34C /* Pods_projectHomeWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F7DB1765453889E38A8277 /* Pods_projectHomeWork.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A21AC152681D9A000FB114E /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		3A4B5D8D26805708005C730A /* projectHomeWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projectHomeWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A4B5D9026805708005C730A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A4B5D9226805708005C730A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,6 +36,7 @@
 		3A4B5DA726806237005C730A /* Persistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistance.swift; sourceTree = "<group>"; };
 		3A4B5DA9268077AD005C730A /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		3A4E8DE326808311002D81BD /* PersistanceForToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceForToDo.swift; sourceTree = "<group>"; };
+		3A4E8DE72681A744002D81BD /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		A0F7DB1765453889E38A8277 /* Pods_projectHomeWork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_projectHomeWork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D20E2A93C233F26DC619F8E8 /* Pods-projectHomeWork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-projectHomeWork.release.xcconfig"; path = "Target Support Files/Pods-projectHomeWork/Pods-projectHomeWork.release.xcconfig"; sourceTree = "<group>"; };
 		E2A2E9A38391CE984D2B73AC /* Pods-projectHomeWork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-projectHomeWork.debug.xcconfig"; path = "Target Support Files/Pods-projectHomeWork/Pods-projectHomeWork.debug.xcconfig"; sourceTree = "<group>"; };
@@ -87,6 +91,7 @@
 		3A4E8DE1268082D5002D81BD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3A4E8DE72681A744002D81BD /* ThirdViewController.swift */,
 				3A4B5DA9268077AD005C730A /* SecondViewController.swift */,
 				3A4B5D9426805708005C730A /* ViewController.swift */,
 			);
@@ -98,6 +103,7 @@
 			children = (
 				3A4B5DA726806237005C730A /* Persistance.swift */,
 				3A4E8DE326808311002D81BD /* PersistanceForToDo.swift */,
+				3A21AC152681D9A000FB114E /* CoreData.swift */,
 			);
 			path = Persistance;
 			sourceTree = "<group>";
@@ -237,8 +243,10 @@
 				3A4B5D9526805708005C730A /* ViewController.swift in Sources */,
 				3A4B5D9126805708005C730A /* AppDelegate.swift in Sources */,
 				3A4B5D9326805708005C730A /* SceneDelegate.swift in Sources */,
+				3A21AC162681D9A000FB114E /* CoreData.swift in Sources */,
 				3A4B5DA826806237005C730A /* Persistance.swift in Sources */,
 				3A4B5D9B26805708005C730A /* projectHomeWork.xcdatamodeld in Sources */,
+				3A4E8DE82681A744002D81BD /* ThirdViewController.swift in Sources */,
 				3A4E8DE426808311002D81BD /* PersistanceForToDo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

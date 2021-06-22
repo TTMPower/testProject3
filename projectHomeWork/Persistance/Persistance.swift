@@ -7,6 +7,8 @@
 
 import Foundation
 
+//MARK: Model for part a) (textfield + textfield)
+
 class Persistance {
     static let shared = Persistance()
     private let firstNameKey = "firstKeyData"
