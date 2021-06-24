@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		3A21AC162681D9A000FB114E /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A21AC152681D9A000FB114E /* CoreData.swift */; };
+		3A21AC1A2681E59C00FB114E /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A21AC192681E59C00FB114E /* FourthViewController.swift */; };
+		3A21AC1D2681E61000FB114E /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A21AC1C2681E61000FB114E /* WeatherModel.swift */; };
+		3A21AC1F2681E65400FB114E /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A21AC1E2681E65400FB114E /* Networking.swift */; };
+		3A21AC212681E66D00FB114E /* ForecastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A21AC202681E66D00FB114E /* ForecastModel.swift */; };
+		3A21AC252681E7FB00FB114E /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A21AC242681E7FB00FB114E /* MyTableViewCell.swift */; };
 		3A4B5D9126805708005C730A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4B5D9026805708005C730A /* AppDelegate.swift */; };
 		3A4B5D9326805708005C730A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4B5D9226805708005C730A /* SceneDelegate.swift */; };
 		3A4B5D9526805708005C730A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4B5D9426805708005C730A /* ViewController.swift */; };
@@ -24,6 +29,11 @@
 
 /* Begin PBXFileReference section */
 		3A21AC152681D9A000FB114E /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
+		3A21AC192681E59C00FB114E /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
+		3A21AC1C2681E61000FB114E /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		3A21AC1E2681E65400FB114E /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		3A21AC202681E66D00FB114E /* ForecastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastModel.swift; sourceTree = "<group>"; };
+		3A21AC242681E7FB00FB114E /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		3A4B5D8D26805708005C730A /* projectHomeWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projectHomeWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A4B5D9026805708005C730A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A4B5D9226805708005C730A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +64,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A21AC1B2681E5FC00FB114E /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				3A21AC1E2681E65400FB114E /* Networking.swift */,
+			);
+			name = Networking;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		3A4B5D8426805708005C730A = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +96,7 @@
 			children = (
 				3A4B5D9026805708005C730A /* AppDelegate.swift */,
 				3A4B5D9226805708005C730A /* SceneDelegate.swift */,
+				3A21AC1B2681E5FC00FB114E /* Networking */,
 				3A4E8DE1268082D5002D81BD /* View */,
 				3A4E8DE2268082EC002D81BD /* Persistance */,
 				3A4B5D9626805708005C730A /* Main.storyboard */,
@@ -91,6 +111,8 @@
 		3A4E8DE1268082D5002D81BD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3A21AC242681E7FB00FB114E /* MyTableViewCell.swift */,
+				3A21AC192681E59C00FB114E /* FourthViewController.swift */,
 				3A4E8DE72681A744002D81BD /* ThirdViewController.swift */,
 				3A4B5DA9268077AD005C730A /* SecondViewController.swift */,
 				3A4B5D9426805708005C730A /* ViewController.swift */,
@@ -101,6 +123,8 @@
 		3A4E8DE2268082EC002D81BD /* Persistance */ = {
 			isa = PBXGroup;
 			children = (
+				3A21AC1C2681E61000FB114E /* WeatherModel.swift */,
+				3A21AC202681E66D00FB114E /* ForecastModel.swift */,
 				3A4B5DA726806237005C730A /* Persistance.swift */,
 				3A4E8DE326808311002D81BD /* PersistanceForToDo.swift */,
 				3A21AC152681D9A000FB114E /* CoreData.swift */,
@@ -240,14 +264,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A4B5DAA268077AD005C730A /* SecondViewController.swift in Sources */,
+				3A21AC212681E66D00FB114E /* ForecastModel.swift in Sources */,
 				3A4B5D9526805708005C730A /* ViewController.swift in Sources */,
 				3A4B5D9126805708005C730A /* AppDelegate.swift in Sources */,
+				3A21AC1F2681E65400FB114E /* Networking.swift in Sources */,
 				3A4B5D9326805708005C730A /* SceneDelegate.swift in Sources */,
+				3A21AC1A2681E59C00FB114E /* FourthViewController.swift in Sources */,
+				3A21AC252681E7FB00FB114E /* MyTableViewCell.swift in Sources */,
 				3A21AC162681D9A000FB114E /* CoreData.swift in Sources */,
 				3A4B5DA826806237005C730A /* Persistance.swift in Sources */,
 				3A4B5D9B26805708005C730A /* projectHomeWork.xcdatamodeld in Sources */,
 				3A4E8DE82681A744002D81BD /* ThirdViewController.swift in Sources */,
 				3A4E8DE426808311002D81BD /* PersistanceForToDo.swift in Sources */,
+				3A21AC1D2681E61000FB114E /* WeatherModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
