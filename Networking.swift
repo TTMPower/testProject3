@@ -9,10 +9,22 @@ import Foundation
 import RealmSwift
 
 class Networking {
+    /// Take data from realm
+    var savedForecastDate: Results<ForecastRealm>!
     
+    /// Save data in realm
     var realmWeather = try! Realm()
     var forecastRealmWeather = try! Realm()
     var forecastRealmDate = try! Realm()
+    
+    static let networksingletop = Networking()
+    
+    
+    /// Empty dict for labels city and temp
+    var cityNames = String()
+    var tempCity = Double()
+    
+    /// Json request for label and temp
     
     func getDataWeather(url: String, params: String, complition: @escaping (WeatherAPI) -> Void) {
         let urlMain = URL(string: url + params)
@@ -36,6 +48,8 @@ class Networking {
         task.resume()
     }
     
+    
+    /// json request for forecast data
     func getForecasturl(url: URL ,complition: @escaping (ForecastModel) -> Void) {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -57,6 +71,8 @@ class Networking {
         }
         task.resume()
     }
+    
+    /// Record data weather forecast
     
     func getForecastData(date: [ListForecast]) {
         DispatchQueue.main.async {
@@ -80,6 +96,8 @@ class Networking {
         }
     }
     
+    /// record data weather label / temp
+    
     func getWeatherData(data: WeatherAPI) {
         DispatchQueue.main.async {
             do {
@@ -95,4 +113,16 @@ class Networking {
             }
         }
     }
+    
+    
+    func getDataFromeRealm() {
+                var savedDataWeather: Results<RealmWeather>!
+                savedDataWeather = try! Realm().objects(RealmWeather.self)
+            savedForecastDate = try! Realm().objects(ForecastRealm.self)
+                for el in savedDataWeather {
+                    self.cityNames = el.name
+                    self.tempCity = el.temp
+                }
+        }
+    
 }

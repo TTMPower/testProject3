@@ -6,33 +6,14 @@
 //
 
 import UIKit
-import RealmSwift
 
 class FourthViewController: UIViewController, UITableViewDelegate {
     
     let city = UILabel()
     let currentWeather = UILabel()
-    let network = Networking()
-    
     var filtreddata: [ListForecast] = [ListForecast]()
     
-    
-    var savedForecastDate: Results<ForecastRealm>!
-    
-    
-    
-    
     @IBOutlet weak var tableViewVisual: UITableView!
-    
-    func getDataFromeRealm() {
-            var savedDataWeather: Results<RealmWeather>!
-            savedDataWeather = try! Realm().objects(RealmWeather.self)
-        savedForecastDate = try! Realm().objects(ForecastRealm.self)
-            for el in savedDataWeather {
-                self.city.text = String("in \(el.name)")
-                self.currentWeather.text = String("\(el.temp)°")
-            }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,9 +22,9 @@ class FourthViewController: UIViewController, UITableViewDelegate {
         tableViewVisual.delegate = self
         tableViewVisual.dataSource = self
         
-        network.getDataWeather(url: API.URLCurrent, params: API.URLToken) { [weak self] complition in
+        Networking.networksingletop.getDataWeather(url: API.URLCurrent, params: API.URLToken) { [weak self] complition in
             
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [self] in
                 self?.city.text = String("in \(complition.name)")
                 self?.currentWeather.text = String("\(complition.main!.temp)°")
             }
@@ -57,15 +38,14 @@ class FourthViewController: UIViewController, UITableViewDelegate {
         currentWeather.numberOfLines = 0
         currentWeather.font = UIFont.boldSystemFont(ofSize: 100)
         
-        getDataFromeRealm()
-        
+        Networking.networksingletop.getDataFromeRealm()
         view.backgroundColor = .white
         view.addSubview(city)
         view.addSubview(currentWeather)
     }
     
     func updatedate(url: URL) {
-        network.getForecasturl(url: url) { [self] complition in
+        Networking.networksingletop.getForecasturl(url: url) { [self] complition in
             if complition.cod == "404" {
                 DispatchQueue.main.async {
                     print("404 error internet")
@@ -90,15 +70,16 @@ extension FourthViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! MyTableViewCell
         
+        let text = Networking.networksingletop.savedForecastDate[indexPath.section].dtTxt[indexPath.row]
+        let temp = Networking.networksingletop.savedForecastDate[indexPath.section].temp[indexPath.row]
         
-        let text = savedForecastDate[indexPath.section].dtTxt[indexPath.row]
-        let temp = savedForecastDate[indexPath.section].temp[indexPath.row]
+        self.city.text = String("\(Networking.networksingletop.cityNames)")
+        self.currentWeather.text = String("\(Networking.networksingletop.tempCity)")
         let newText = text.replacingOccurrences(of: "12:00:00", with: "", options: .literal, range: nil)
-        
         cell.dateLabel.text = String("\(newText)")
         cell.tempLabel.text = String("\(temp)°")
         return cell
+        
     }
+    
 }
-
-
