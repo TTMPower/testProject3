@@ -6,15 +6,14 @@
 //
 
 import UIKit
-import RealmSwift
 
 //MARK: Список Todo с возможностью добавления и удаления задач, в котором задачи кешируются в Realm, а при повторном запуске показываются последние сохранённые задачи.
 
 class SecondViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     
-    var arrayString: Results<Tasks>!
-    var realm = try! Realm()
+    let network = Networking.networksingletop
+    
     
     //MARK: Add new note
     @IBAction func addTask(_ sender: Any) {
@@ -23,8 +22,8 @@ class SecondViewController: UIViewController, UITableViewDelegate {
             guard let text = alertAction.textFields?.first?.text, !text.isEmpty else { return }
             let task = Tasks()
             task.text = text
-            try! self.realm.write {
-                self.realm.add(task)
+            try! self.network.realm.write {
+                self.network.realm.add(task)
                 self.tableView.reloadData()
             }
         }
@@ -41,7 +40,7 @@ class SecondViewController: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        arrayString = realm.objects(Tasks.self)
+        network.arrayString = network.realm.objects(Tasks.self)
     }
     
     
@@ -49,15 +48,15 @@ class SecondViewController: UIViewController, UITableViewDelegate {
 
 extension SecondViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if arrayString.count != 0{
-            return arrayString.count
+        if network.arrayString.count != 0{
+            return network.arrayString.count
         }
         return 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let listes = arrayString[indexPath.row]
+        let listes = network.arrayString[indexPath.row]
         cell.textLabel?.text = listes.text
         return cell
     }
@@ -65,10 +64,10 @@ extension SecondViewController: UITableViewDataSource {
     // MARK: Delete row from left swipe
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        let editingRow = arrayString[indexPath.row]
+        let editingRow = network.arrayString[indexPath.row]
         if editingStyle == .delete {
-            try! self.realm.write {
-                self.realm.delete(editingRow)
+            try! self.network.realm.write {
+                self.network.realm.delete(editingRow)
                 tableView.reloadData()
             }
         }

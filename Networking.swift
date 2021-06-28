@@ -9,14 +9,12 @@ import Foundation
 import RealmSwift
 
 class Networking {
+    
+    var arrayString: Results<Tasks>!
+    var realm = try! Realm()
+    
     /// Take data from realm
     var savedForecastDate: Results<ForecastRealm>!
-    
-    /// Save data in realm
-    var realmWeather = try! Realm()
-    var forecastRealmWeather = try! Realm()
-    var forecastRealmDate = try! Realm()
-    
     static let networksingletop = Networking()
     
     
@@ -77,14 +75,14 @@ class Networking {
     func getForecastData(date: [ListForecast]) {
         DispatchQueue.main.async {
             do {
-                try self.forecastRealmWeather.write {
+                try self.realm.write {
                     let filtredData = date.filter { ($0.dtTxt.contains("12:00:00")) }
                     let forecastData = ForecastRealm()
                     for el in filtredData {
                         forecastData.temp.append(el.main!.temp)
                         forecastData.dtTxt.append(el.dtTxt)
                     }
-                    self.forecastRealmDate.add(forecastData)
+                    self.realm.add(forecastData)
                     print(forecastData.dtTxt)
                     print(forecastData.temp)
                     
@@ -101,11 +99,11 @@ class Networking {
     func getWeatherData(data: WeatherAPI) {
         DispatchQueue.main.async {
             do {
-                try self.realmWeather.write {
+                try self.realm.write {
                     let newData = RealmWeather()
                     newData.temp = data.main!.temp
                     newData.name = data.name
-                    self.realmWeather.add(newData)
+                    self.realm.add(newData)
                     print("Data SAVED: \(newData.name) //// \(newData.temp)")
                 }
             } catch {
