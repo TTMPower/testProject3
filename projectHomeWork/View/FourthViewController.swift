@@ -13,6 +13,7 @@ class FourthViewController: UIViewController, UITableViewDelegate {
     let currentWeather = UILabel()
     var filtreddata: [ListForecast] = [ListForecast]()
     
+    
     @IBOutlet weak var tableViewVisual: UITableView!
     
     override func viewDidLoad() {
@@ -64,7 +65,17 @@ class FourthViewController: UIViewController, UITableViewDelegate {
 
 extension FourthViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filtreddata.count
+        var newData = [Double]()
+        if newData.isEmpty {
+            if let dataCount = Networking.networksingletop.savedForecastDate {
+                for el in dataCount {
+                    newData += el.temp
+                }
+            }
+            return filtreddata.count
+        } else {
+            return newData.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

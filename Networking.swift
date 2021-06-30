@@ -122,5 +122,5 @@ class Networking {
                     self.tempCity = el.temp
                 }
         }
-    
+
 }
