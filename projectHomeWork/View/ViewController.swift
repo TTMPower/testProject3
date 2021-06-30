@@ -20,12 +20,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         firstName.text = Persistance.shared.firstName
         secondName.text = Persistance.shared.secondName
-        
-       
-
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
     
     @IBAction func saveButton(_ sender: Any) {

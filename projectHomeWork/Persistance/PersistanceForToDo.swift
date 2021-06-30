@@ -13,5 +13,4 @@ import RealmSwift
 class Tasks: Object {
     @objc dynamic var text = ""
     @objc dynamic var completed = false
-    
 }

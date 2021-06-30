@@ -31,12 +31,13 @@ class CoreData {
     
     //MARK: Save CoreData object
     
-    func saveData(title: String) {
+    func saveData(title: String, alpha: Double) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         guard let entity = NSEntityDescription.entity(forEntityName: "DataTasks", in: context) else { return }
         let taskObject = DataTasks(entity: entity, insertInto: context)
         taskObject.title = title
+        taskObject.alpha = alpha
         do {
             try context.save()
             arrayData.append(taskObject)
