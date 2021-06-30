@@ -122,13 +122,42 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="thirdcell" id="zcO-Ug-xQy">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="thirdcell" id="zcO-Ug-xQy" customClass="CoreDataTableViewCell" customModule="projectHomeWork" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zcO-Ug-xQy" id="ejY-g4-1f3">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUd-H2-m8j">
+                                                    <rect key="frame" x="10" y="11" width="20" height="21"/>
+                                                    <state key="normal" image="checkmark.circle.fill" catalog="system"/>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5IM-Xl-qSu">
+                                                    <rect key="frame" x="38" y="11" width="339" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="339" id="mUY-VT-Tlf"/>
+                                                        <constraint firstAttribute="height" constant="21" id="ve9-Co-Y9e"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="5IM-Xl-qSu" firstAttribute="top" secondItem="ejY-g4-1f3" secondAttribute="topMargin" id="6ko-Ml-Kuk"/>
+                                                <constraint firstItem="dUd-H2-m8j" firstAttribute="bottom" secondItem="5IM-Xl-qSu" secondAttribute="bottom" id="G8p-0V-tWj"/>
+                                                <constraint firstItem="dUd-H2-m8j" firstAttribute="firstBaseline" secondItem="5IM-Xl-qSu" secondAttribute="firstBaseline" id="Uhu-qQ-9Ri"/>
+                                                <constraint firstItem="5IM-Xl-qSu" firstAttribute="leading" secondItem="dUd-H2-m8j" secondAttribute="trailing" constant="8" symbolic="YES" id="VqF-kL-IoM"/>
+                                                <constraint firstItem="dUd-H2-m8j" firstAttribute="baseline" secondItem="5IM-Xl-qSu" secondAttribute="firstBaseline" id="hFY-D7-cuY"/>
+                                                <constraint firstItem="dUd-H2-m8j" firstAttribute="leading" secondItem="ejY-g4-1f3" secondAttribute="leadingMargin" constant="-10" id="jCN-ZR-AkL"/>
+                                                <constraint firstItem="dUd-H2-m8j" firstAttribute="centerY" secondItem="5IM-Xl-qSu" secondAttribute="centerY" id="yfC-we-u4H"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="checkMark" destination="dUd-H2-m8j" id="SUd-69-Olt"/>
+                                            <outlet property="labelCellCore" destination="5IM-Xl-qSu" id="fq1-sP-T8u"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -269,6 +298,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
